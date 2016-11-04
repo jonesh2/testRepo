@@ -2,8 +2,8 @@ def mySearch(theList, anItem):
     for i in range(len(theList)):
         if theList[i] == anItem:
             print("Found: " + str(anItem))
-            return
-    print("Sad")
+        else:
+            print("Sad")
     return
 
 def main():
