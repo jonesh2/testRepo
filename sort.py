@@ -1,6 +1,6 @@
 def mySearch(theList, anItem):
-    for i in theList:
-        if i == anItem:
+    for i in range(len(theList)):
+        if theList[i] == anItem:
             print("Found: " + str(anItem))
             return
     print("Sad")
