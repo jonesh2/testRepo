@@ -15,7 +15,7 @@ def recursiveSearch(theList, left, right, anItem):
 
 def main():
     aList = ["apple", "jacks", "peanuts", "quail", "snail", "tilapia", "town", "zebra"]
-    print(recursiveSearch(aList, 0, 8, "peanuts"))
+    print(mySearch(aList, "peanuts"))
     
 main()
     
