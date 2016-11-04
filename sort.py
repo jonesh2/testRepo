@@ -1,15 +1,21 @@
 def mySearch(theList, anItem):
-    for i in range(0, len(theList)-1, -1):
-        if theList[i] == anItem:
-            print("Found: " + str(anItem))
-    print("Sad")
-    return
+    return recursiveSearch(theList, 0, len(theList)-1, anItem)
+
+def recursiveSearch(theList, left, right, anItem):
+    if right < left:
+        return False
+    else:
+        mid = (right+left)//2
+        if theList[mid] == anItem:
+            return True
+        elif anItem < theList[mid]:
+            return recursiveSearch(theList, left, mid-1, anItem)
+        else:
+            return recursiveSearch(theList, mid+1, right, anItem)
 
 def main():
-    aList = []
-    for i in range(400):
-        aList.append(i * 3 // 2 + (50%(i+1)))
-    mySearch(aList, 8)
+    aList = ["apple", "jacks", "peanuts", "quail", "snail", "tilapia", "town", "zebra"]
+    print(recursiveSearch(aList, 0, 8, "peanuts"))
     
 main()
     
