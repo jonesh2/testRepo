@@ -9,9 +9,11 @@ def recursiveSearch(theList, left, right, anItem):
         if theList[mid] == anItem:
             return True
         elif anItem > theList[mid]:
-            return recursiveSearch(theList, mid+1, right, anItem)
+            left = mid+1
+            return recursiveSearch(theList, left, right, anItem)
         else:
-            return recursiveSearch(theList, left, mid-1, anItem)
+            right = mid-1
+            return recursiveSearch(theList, left, right, anItem)
 
 def main():
     aList = ["apple", "jacks", "peanuts", "quail", "snail", "tilapia", "town", "zebra"]
