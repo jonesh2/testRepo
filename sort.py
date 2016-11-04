@@ -8,9 +8,9 @@ def mySearch(theList, anItem):
 
 def main():
     aList = []
-    for i in range(200):
+    for i in range(400):
         aList.append(i * 3 // 2 + (50%(i+1)))
-    mySearch(aList, 5)
+    mySearch(aList, 8)
     
 main()
     
