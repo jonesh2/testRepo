@@ -1,13 +1,12 @@
 def quicksort(myList, start, end):
     if start < end:
         # partition the list
-        pivot = partition(myList, start, end)
+        pivot = partition(myList, start, end, start+1, end)
         # sort both halves
         quicksort(myList, start, pivot-1)
         quicksort(myList, pivot+1, end)
 
-
-def partition(myList, start, end):
+def partition(myList, start, end, left, right):
     pivot = myList[start]
     left = start+1
     right = end
@@ -21,14 +20,15 @@ def partition(myList, start, end):
             done= True
         else:
             # swap places
-            temp=myList[left]
-            myList[left]=myList[right]
-            myList[right]=temp
+            swap(myList, left, right)
     # swap start with myList[right]
-    temp=myList[start]
-    myList[start]=myList[right]
-    myList[right]=temp
+    swap(myList, start, right)
     return right
+
+def swap(myList, one, two):
+    myList[one]=myList[two]
+    myList[two]=myList[one]
+
 
 def main():
     myList = [3, 2, 9, 0, 7, 3, 5, 12]
