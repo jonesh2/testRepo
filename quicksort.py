@@ -1,14 +1,12 @@
-def switch(myList, one, two):
-    temp=myList[one]
-    myList[one]=myList[two]
-    myList[two]=temp
+def quicksort(myList, start, end):
+    if start < end:
+        # partition the list
+        pivot = partition(myList, start, end, start+1, end)
+        # sort both halves
+        quicksort(myList, start, pivot-1)
+        quicksort(myList, pivot+1, end)
 
-def sortMyList(myList):
-    newList = myList.copy()
-    quicksort(newList, 0, len(newList))
-    return newList
-
-def divide(myList, start, end):
+def partition(myList, start, end, left, right):
     pivot = myList[start]
     left = start+1
     right = end
@@ -22,22 +20,19 @@ def divide(myList, start, end):
             done= True
         else:
             # swap places
-            switch(myList, left, right)
+            swap(myList, left, right)
     # swap start with myList[right]
-    switch(myList, start, right)
+    swap(myList, start, right)
     return right
 
-def quicksort(myList, start, end):
-    if start < end:
-        # partition the list
-        pivot = divide(myList, start, end)
-        # sort both halves
-        conquer(myList, start, pivot-1)
-        conquer(myList, pivot+1, end)
+def swap(myList, one, two):
+    myList[one]=myList[two]
+    myList[two]=myList[one]
+
 
 def main():
     myList = [3, 2, 9, 0, 7, 3, 5, 12]
-    myList = quicksort(myList, 0, len(myList)-1)
+    quicksort(myList, 0, len(myList)-1)
     print myList
 
 main()
