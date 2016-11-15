@@ -5,6 +5,14 @@ def partition(myList, start, end):
     done = False
     while not done:
         ## Do something here
+        #
+        #
+        #
+        #
+        #
+        #
+        #
+        #
     return right
 
 def quicksort(myList, start, end):
@@ -15,13 +23,13 @@ def quicksort(myList, start, end):
         quicksort(myList, start, pivot-1)
         quicksort(myList, pivot+1, end)
         
-def swap(myList, one, two):
+def switch(myList, one, two):
     temp=myList[one]
     myList[one]=myList[two]
-    myList[two]=temp        
+    myList[two]=temp   
 
 def main():
-    myList = [3, 2, 9, 0, 7, 3, 5, 12]
+    myList = [2, 1, 7, 8]
     quicksort(myList, 0, len(myList)-1)
     print myList
 
