@@ -24,6 +24,7 @@ def partition(myList, start, end, left, right):
     return right
 
 def swap(myList, one, two):
+    temp=myList[one]
     myList[one]=myList[two]
     myList[two]=temp
 
